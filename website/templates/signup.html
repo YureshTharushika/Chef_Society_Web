@@ -1,7 +1,32 @@
 {% extends "base.html" %}
 {% block title %}Sign Up{% endblock %}
 {% block content %}
-<form method="POST">
+
+<form method="POST" enctype="multipart/form-data">
+  {{ form.csrf_token }}
+
+  <br/>
+  {{ form.email.label(class="form-label") }}
+  {{ form.email(class="form-control") }}
+
+  {{ form.username.label(class="form-label") }}
+  {{ form.username(class="form-control") }}
+
+  {{ form.password1.label(class="form-label") }}
+  {{ form.password1(class="form-control") }}
+
+  {{ form.password2.label(class="form-label") }}
+  {{ form.password2(class="form-control") }}
+      
+  <br/>
+  {{ form.submit(class="btn btn-secondary") }}
+
+</form>
+
+
+
+<!-- <form method="POST">
+  {{ form.csrf_token }}
     <h3 align="center">Sign Up</h3>
     <div class="form-group">
       <label for="email">Email Address</label>
@@ -41,5 +66,5 @@
         <button class="btn btn-primary" type="submit">Sign Up</button>
       </div>
     </div>
-</form>
+</form> -->
 {% endblock %}

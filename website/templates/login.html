@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<form method="post">
+
+<!-- <form method="post">
+  {{ form.csrf_token }}
     <h3 align="center">Login</h3>
     <div class="form-group">
         <label for="email">Email Address</label>
@@ -25,7 +27,21 @@
           <button class="btn btn-primary" type="submit">Login</button>
         </div>
     </div>
-</form>
+</form> -->
 
+<form method="POST" enctype="multipart/form-data">
+  {{ form.csrf_token }}
+
+  <br/>
+  {{ form.email.label(class="form-label") }}
+  {{ form.email(class="form-control") }}
+
+  {{ form.password.label(class="form-label") }}
+  {{ form.password(class="form-control") }}
+      
+  <br/>
+  {{ form.submit(class="btn btn-secondary") }}
+
+</form>
 
 {% endblock %}

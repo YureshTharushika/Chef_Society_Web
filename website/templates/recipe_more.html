@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Recipe More Details{% endblock %}
+{% block content %}
+
+
+<div id="content" class="clearfix">
+
+    <div id="left-area" class="clearfix">
+
+        <h1 class="title fn" itemprop="name">{{ name }}</h1>
+        <span class="published">2022 02 10</span>
+        <div class="single-img-box">
+            <div style="position: relative;">
+                <img itemprop="image" src="{{ imageurl }}" alt="..." style="position: static; top: 0px; left: 0px; z-index: 100; opacity: 1; display: block;">
+            </div>
+        </div>
+        <span class="w-pet-border"></span>
+        <div class="info-left-instruction">
+            <div itemprop="description">
+                <h3 class="blue">ingredients</h3>
+                <ul>
+                    <li class="ingredient" itemprop="ingredients">{{ ingredients }}</li>
+                </ul>
+                <h3 class="blue">instructions</h3>
+                <div>
+                    <h4 class="red me-steps">
+                        <span class="stepcheck"></span>
+                        "Step 1"
+                    </h4>
+                    <p  class="instructions" itemprop="recipeInstructions">
+                        {{ instructions }}
+                    </p>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+<img itemprop="image" src="images/demo/PPRGP-575x262.jpg" alt="" class="cycle-slide cycle-sentinel" style="position: static; top: 0px; left: 0px; z-index: 100; opacity: 1; visibility: hidden; display: block;">

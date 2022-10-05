@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}New Recipe{% endblock %}
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+
+    <br/>
+    {{ form.name.label(class="form-label") }}
+    {{ form.name(class="form-control") }}
+
+    {{ form.ingredients.label(class="form-label") }}
+    {{ form.ingredients(class="form-control") }}
+
+    {{ form.instructions.label(class="form-label") }}
+    {{ form.instructions(class="form-control") }}
+    
+    {{ form.image.label() }}
+    {{ form.image(class="form-control") }}
+    {% for error in form.image.errors %}
+                <small class="text-danger">{{ error }}</small>  
+    {% endfor %}
+        
+    <br/>
+    {{ form.submit(class="btn btn-secondary") }}
+
+</form>
+
+{% endblock %}

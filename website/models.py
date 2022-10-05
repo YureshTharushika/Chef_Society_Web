@@ -12,7 +12,10 @@ class User(Document, UserMixin):
 
     def get_id(self):
         object_id = self.user_json.get('_id')
-        return str(object_id)    
+        return str(object_id)
+
+    def is_authenticated(self):
+        return True    
     
     # username = StringField(unique=True, required=True)
     # email = EmailField(unique=True, required=True)
